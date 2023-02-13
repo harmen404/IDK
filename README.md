@@ -1,5 +1,5 @@
 # 💫 About Me:
-Looking for job opportunities in the IT field but it doesn’t rule out the possibility<br>for me started a position in another field.
+Looking for opportunities in the IT field but it doesn’t rule out the possibility<br>for me started a position in another field.
 
 
 ## 🌐 Socials:
