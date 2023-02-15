@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator Tagihan Biaya air listrik KPR 1</title>
+    </head>
+    <body>
+    <script>
+        // POP UP INPUT 
+        var listrikb = prompt("masukkan angka LISTRIK BULAN SEKARANG?", "");
+        var airb = prompt("masukkan angka AIR BULAN SEKARANG?", "");
+        var listrikl = prompt("masukkan angka LISTRIK bulan KEMARIN?", "");
+        var airl = prompt("masukkan angka AIR bulan KEMARIN?", "");
+
+        // 
+        var hargaair= 1500;
+        var hargalistrik = 787;
+        var hargaadm= 10000;
+        var admair = 650;
+        var hargasampah=30000;
+
+        // MULAI PROSES
+        var plistrik = (listrikb-listrikl)*hargalistrik;
+            var plistrik;
+            var	number_string   = plistrik.toString(),
+                sisa2 	        = number_string.length % 3,
+                rupiah2     	= number_string.substr(0, sisa2),
+                ribuan2     	= number_string.substr(sisa2).match(/\d{3}/g);
+            
+            if (ribuan2) {
+                separator2 = sisa2 ? '.' : '';
+                rupiah2 += separator2 + ribuan2.join('.');
+            }
+        // Cetak hasil
+        document.write("<p>Harga Listrik    ="+ rupiah2+"</p>");
+        // HARGA AIR    
+        var pair = ((airb-airl)*hargaair)+admair;
+        var pair;
+            var	number_string   = pair.toString(),
+                sisa        	= number_string.length % 3,
+                rupiah      	= number_string.substr(0, sisa),
+                ribuan 	        = number_string.substr(sisa).match(/\d{3}/g);            
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+            document.write("<p>Harga air    = "+ rupiah +"</p>");
+        // HARGA AIR DAN LISTRIK
+  /*      var al = plistrik+pair;
+        var al;
+        var	number_string   = al.toString(),
+                sisa1   	= number_string.length % 3,
+                rupiah1 	= number_string.substr(0, sisa1),
+                ribuan1 	= number_string.substr(sisa1).match(/\d{3}/g);
+            if (ribuan1) {
+                separator1  = sisa1 ? '.' : '';
+                rupiah1 += separator1 + ribuan1.join('.');
+            }
+        document.write("<p>Harga air dan Listrik  =  "+ rupiah1 +"</p>");
+
+*/
+        //harga sampah
+        var hargasampah;
+        var	number_string = hargasampah.toString(),
+                sisa5 	    = number_string.length % 3,
+                rupiah5 	= number_string.substr(0, sisa5),
+                ribuan5 	= number_string.substr(sisa5).match(/\d{3}/g);
+            if (ribuan5) {
+                separator5 = sisa5 ? '.' : '';
+                rupiah5 += separator5 + ribuan5.join('.');
+            }
+        document.write("<p>Biaya Sampah perbulan    = "+rupiah5+"</p>");
+
+        // Total Sub Tagihan tanpa biaya admin
+        var subtotal = plistrik+pair+hargasampah;
+        var subtotal;
+        var	number_string   = subtotal.toString(),
+                sisa3 	    = number_string.length % 3,
+                rupiah3 	= number_string.substr(0, sisa3),
+                ribuan3 	= number_string.substr(sisa3).match(/\d{3}/g);
+            if (ribuan3) {
+                separator3 = sisa3 ? '.' : '';
+                rupiah3 += separator3 + ribuan3.join('.');
+            }
+        document.write("<p>Sub Total Tagihan tanpa biaya admin      =  "+ rupiah3 +"</p>");
+
+        // biaya admin
+        var adm = hargaadm;
+        var adm;
+        var	number_string   = adm.toString(),
+                sisa0 	    = number_string.length % 3,
+                rupiah0 	= number_string.substr(0, sisa0),
+                ribuan0 	= number_string.substr(sisa0).match(/\d{3}/g);
+            if (ribuan0) {
+                separator0 = sisa0 ? '.' : '';
+                rupiah0 += separator0 + ribuan0.join('.');
+            }
+        document.write("<p>Harga Biaya Admin 10K       =  "+ rupiah0 +"</p>");
+
+        // PERKIRAAN TOTAL TAGIHAN ANDA 
+        var final = plistrik+pair+hargasampah+hargaadm;
+        var final;
+        var	number_string   = final.toString(),
+                sisa4 	    = number_string.length % 3,
+                rupiah4 	= number_string.substr(0, sisa4),
+                ribuan4 	= number_string.substr(sisa4).match(/\d{3}/g);        
+            if (ribuan4) {
+                separator4 = sisa4 ? '.' : '';
+                rupiah4 += separator4 + ribuan4.join('.');
+            }
+        document.write("<p>PERKIRAAN TOTAL TAGIHAN ANDA  =  "+ rupiah4 +"</p>");
+    </script>
+    </body>
